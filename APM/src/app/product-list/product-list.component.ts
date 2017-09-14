@@ -85,12 +85,16 @@ export class ProductListComponent implements OnInit {
     console.log('ProductListComponent: In OnInit');
   }
 
-  private performFilter(listFilter: string) {
-    listFilter = listFilter.toLocaleLowerCase();
-    return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().indexOf(listFilter) !== -1);
+  onRatingClicked(message: string) {
+    console.log(message);
   }
 
   toggleImage(): void {
     this.showImage = !this.showImage;
+  }
+
+  private performFilter(listFilter: string) {
+    listFilter = listFilter.toLocaleLowerCase();
+    return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().indexOf(listFilter) !== -1);
   }
 }
