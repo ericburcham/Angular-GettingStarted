@@ -7,10 +7,21 @@ import { IProduct } from './product';
   templateUrl: './product-list.component.html'
 })
 export class ProductListComponent implements OnInit {
+
   imageWidth: number = 12;
   imageMargin: number = 2;
-  listFilter: string = '';
+
+  _listFilter: string;
+  get listFilter(): string {
+    return this._listFilter;
+  }
+  set listFilter(value: string) {
+    this._listFilter = value;
+    this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+  }
+
   pageTitle: string = 'Product List!';
+  filteredProducts: IProduct[];
   products: IProduct[] = [
     {
       'productId': 1,
@@ -65,8 +76,18 @@ export class ProductListComponent implements OnInit {
   ];
   showImage: boolean = false;
 
+  constructor() {
+    this.filteredProducts = this.products;
+    this.listFilter = '';
+  }
+
   ngOnInit(): void {
     console.log('ProductListComponent: In OnInit');
+  }
+
+  private performFilter(listFilter: string) {
+    listFilter = listFilter.toLocaleLowerCase();
+    return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().indexOf(listFilter) !== -1);
   }
 
   toggleImage(): void {
