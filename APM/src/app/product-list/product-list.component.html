@@ -40,11 +40,11 @@
                    [style.margin.px]='imageMargin'
                  >
           </td>
-          <td>{{product.productName}}</td>
-          <td>{{product.productCode | uppercase | stringReplacement:'-':' '}}</td>
-          <td>{{product.releaseDate}}</td>
-          <td>{{product.price | currency:'USD':true:'1.2-2'}}</td>
-          <td>{{product.starRating}}</td>
+          <td>{{ product.productName }}</td>
+          <td>{{ product.productCode | uppercase | convertDashesToSpaces }}</td>
+          <td>{{ product.releaseDate }}</td>
+          <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>
+          <td><pm-star [rating]='product.starRating'></pm-star></td>
         </tr>
         </tbody>
       </table>

@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ConvertDashesToSpacesPipe, ConvertToSpacesPipe, StringReplacementPipe } from './shared/string-replacement.pipe';
+import { StarComponent } from './shared/star.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { ConvertDashesToSpacesPipe, ConvertToSpacesPipe, StringReplacementPipe }
     ConvertDashesToSpacesPipe,
     ConvertToSpacesPipe,
     ProductListComponent,
+    StarComponent,
     StringReplacementPipe
   ],
   imports: [
