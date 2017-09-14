@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { IProduct } from './product';
 
 @Component({
   selector: 'pm-product-list',
+  styleUrls: ['./product-list-component.css'],
   templateUrl: './product-list.component.html'
 })
 export class ProductListComponent {
@@ -9,7 +11,7 @@ export class ProductListComponent {
   imageMargin: number = 2;
   listFilter: string = '';
   pageTitle: string = 'Product List!';
-  products: any[] = [
+  products: IProduct[] = [
     {
       'productId': 1,
       'productName': 'Leaf Rake',
@@ -62,7 +64,7 @@ export class ProductListComponent {
     }
   ];
   showImage: boolean = false;
-  toggleImage(): void{
+  toggleImage(): void {
     this.showImage = !this.showImage;
   }
 }
