@@ -4,11 +4,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { StringReplacementPipe } from './shared/string-replacement.pipe';
+import { ConvertToSpacesPipe, StringReplacementPipe } from './shared/string-replacement.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ConvertToSpacesPipe,
     ProductListComponent,
     StringReplacementPipe
   ],
