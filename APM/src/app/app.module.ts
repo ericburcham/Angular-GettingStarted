@@ -16,3 +16,4 @@ import {ProductListComponent} from './product-list/product-list.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
