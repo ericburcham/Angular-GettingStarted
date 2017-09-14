@@ -20,3 +20,15 @@ export class ConvertToSpacesPipe implements PipeTransform {
     return this.stringReplacementPipe.transform(value, searchValue, this.replaceValue);
   }
 }
+
+@Pipe({
+  name: 'convertDashesToSpaces'
+})
+export class ConvertDashesToSpacesPipe implements PipeTransform {
+  readonly convertToSpacesPipe: ConvertToSpacesPipe = new ConvertToSpacesPipe();
+  readonly searchValue: string = '-';
+
+  transform(value: string) {
+    return this.convertToSpacesPipe.transform(value, this.searchValue);
+  }
+}
