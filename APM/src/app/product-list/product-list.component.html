@@ -32,12 +32,14 @@
         </thead>
         <tbody>
         <tr *ngFor='let product of products'>
-          <td><img *ngIf='showImage'
+          <td>
+            <img *ngIf='showImage'
                    [src]='product.imageUrl'
                    [title]='product.productName | uppercase'
                    [style.width.px]='imageWidth'
                    [style.margin.px]='imageMargin'
-          ></td>
+                 >
+          </td>
           <td>{{product.productName}}</td>
           <td>{{product.productCode | uppercase}}</td>
           <td>{{product.releaseDate}}</td>
